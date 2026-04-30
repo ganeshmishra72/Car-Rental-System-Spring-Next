@@ -3,7 +3,7 @@ import AuthStore from "@/store/AuthStore";
 import axios from "axios"
 
 const apiclient=axios.create({
-    baseURL:`https://backend-crs.onrender.com/api/v1`,
+    baseURL:`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1`,
     headers:{
         'Content-Type':"application/json"
     },
