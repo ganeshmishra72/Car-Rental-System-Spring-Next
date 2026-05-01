@@ -4,11 +4,15 @@ import Layout from './Layout'
 import { fetchBooking } from '@/service/BookingService'
 import { useQuery } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
+import { useStatusChange } from '@/hooks/BookingHooks'
 
 
-
+type BookingStatus = "CONFIRMED" | "PENDING" | "CANCELLED";
    
 const ManageBookings = () => {
+
+  const { mutate: updateStatus } = useStatusChange();
+
   const {data}=useQuery({
     queryKey:['bookings'],
     queryFn:fetchBooking,
@@ -96,17 +100,26 @@ const ManageBookings = () => {
 
                 {/* 🔘 STATUS */}
                 <td className="p-4">
-                  <span
-                    className={`px-3 py-1 text-xs rounded-full ${
-                      item.status === 'Confirmed'
-                        ? 'bg-green-500/20 text-green-400'
-                        : item.status === 'Pending'
-                        ? 'bg-yellow-500/20 text-yellow-400'
-                        : 'bg-red-500/20 text-red-400'
-                    }`}
-                  >
-                    {item.status}
-                  </span>
+                   <select
+    value={item.status}
+    onChange={(e) =>
+      updateStatus({
+        bookingId: item.id,
+        status: e.target.value as BookingStatus
+      })
+    }
+    className={`px-3 py-1 text-xs rounded-full bg-transparent border outline-none ${
+      item.status === 'CONFIRMED'
+        ? 'text-green-400 border-green-400'
+        : item.status === 'PENDING'
+        ? 'text-yellow-400 border-yellow-400'
+        : 'text-red-400 border-red-400'
+    }`}
+  >
+    <option value="PENDING">Pending</option>
+    <option value="CONFIRMED">Confirmed</option>
+    <option value="CANCELLED">Cancelled</option>
+  </select>
                 </td>
 
                 {/* 👁️ ACTION */}

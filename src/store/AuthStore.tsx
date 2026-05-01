@@ -24,6 +24,7 @@ const AuthStore = create<AuthService>()(persist((set) => ({
   refreshToken:null,
   user:null,
   role:null,
+   
   login: (logindata) => {
     set({
       accessToken: logindata.accessToken,
@@ -46,6 +47,7 @@ const AuthStore = create<AuthService>()(persist((set) => ({
         });
       },
   
-}), { name: "auth-storage" }))
+}), { name: "auth-storage" 
+ }))
 
 export default AuthStore;
