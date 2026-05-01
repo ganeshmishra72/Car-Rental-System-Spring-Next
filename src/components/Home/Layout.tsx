@@ -249,7 +249,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <i className="ri-roadster-line mr-2"></i> Cars
   </Link>
 
-      <Link href="/my-booking">
+      <Link href="/booking">
         <i className="ri-shopping-bag-4-line mr-2"></i> My Booking
       </Link>
   {/* AUTH SECTION */}
@@ -278,9 +278,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       )}
 
       <button
-        onClick={() => 
-          handelLogout()
+        onClick={() => {
+          handelLogout(),
+          setSlider(false)
         }
+      }
         className="text-red-500 text-left"
       >
         <i className="ri-logout-box-r-line mr-2"></i> Logout
