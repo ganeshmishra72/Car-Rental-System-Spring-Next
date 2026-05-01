@@ -56,7 +56,7 @@ const stats = [
           </h2>
 
           {data.recentBookings.map((b: any) => (
-  <div key={b.id} className="flex justify-between items-center bg-white/5 p-3 rounded-lg">
+  <div key={b.id} className="flex justify-between items-center bg-white/5 p-3 rounded-lg space-y-4">
 
     <div>
       <p className="font-medium">{b.car.name}</p>
