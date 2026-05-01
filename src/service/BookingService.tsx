@@ -18,7 +18,7 @@ export const fetchBooking=async()=>{
 type BookingStatus = "CONFIRMED" | "PENDING" | "CANCELLED";
 
 export const updateBookingStatus=async(bookingId:any,status:BookingStatus)=>{
-    const response=await apiclient.put(`/bookings${bookingId}/status`,status)
+    const response=await apiclient.put(`/bookings/${bookingId}/status`,status)
     return response.data
 }
  

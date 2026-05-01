@@ -1,7 +1,7 @@
 const dummyData: any = [
     {
         id: 1,
-        image: "/car1.jpg",
+        images: ["/car1.jpg"],
         name: "BMW",
         model: "XUV-750",
         seat: 4,
@@ -14,7 +14,7 @@ const dummyData: any = [
     },
     {
         id: 2,
-        image: "/car2.jpg",
+        images: ["/car2.jpg"],
         name: "Audi",
         model: "XUV",
         seat: 7,
@@ -27,7 +27,7 @@ const dummyData: any = [
     },
     {
         id: 3,
-        image: "/car1.jpg",
+        images: ["/car3.jpg"],
         name: "BMW",
         model: "XUV-750",
         seat: 4,
@@ -40,7 +40,7 @@ const dummyData: any = [
     },
     {
         id: 4,
-        image: "/car2.jpg",
+        images: ["/car5.png"],
         name: "Audi",
         model: "XUV",
         seat: 7,
@@ -53,7 +53,7 @@ const dummyData: any = [
     },
     {
         id: 5,
-        image: "/car1.jpg",
+        images: ["/car.jpg"],
         name: "BMW",
         model: "XUV-750",
         seat: 4,

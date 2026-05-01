@@ -2,9 +2,7 @@
 import React from 'react'
 import Layout from './Layout'
 import { Button } from '../ui/button'
-import AuthStore from '@/store/AuthStore'
-import { useQuery } from '@tanstack/react-query'
-import { fetchAllCars } from '@/service/CarService'
+ 
 import Link from 'next/link'
 import { useCars } from '@/hooks/CarHooks'
 import dummyData from '@/model/CarsData'
@@ -85,7 +83,7 @@ const Home = () => {
         {/* IMAGE */}
         <div className="w-full md:h-56 relative">
           <img
-            src={item.images?.[0] || "/car1.jpg"}
+            src={item.images?.[0] }
             alt={item.name}
             className="w-full h-full object-cover"
           />
